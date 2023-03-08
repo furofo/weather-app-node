@@ -7,7 +7,7 @@ console.log("client side js file loaded");
 // })
 const fetchWeatherData = (searchString, messageOne, messageTwo) => {
     // let url = './weather?address=' + searchString;
-    let url = '/weather?address=' + searchString;
+    let url = './weather?address=' + searchString;
     fetch(url).then((res) => {
 
         res.json().then((data) => {
