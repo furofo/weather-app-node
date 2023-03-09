@@ -7,6 +7,7 @@ console.log("client side js file loaded");
 // })
 const fetchWeatherData = (searchString, messageOne, messageTwo) => {
     // let url = './weather?address=' + searchString;
+    messageOne.textContent= "Searching For Weather";
     let url = './weather?address=' + searchString;
     fetch(url).then((res) => {
 
@@ -26,7 +27,7 @@ window.onload = () => {
     const search = document.querySelector("input");
     const messageOne = document.querySelector("#message-one");
     const messageTwo = document.querySelector("#message-two");
-    messageOne.textContent= "Loading Message";
+   
 weatherFrom.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value;
