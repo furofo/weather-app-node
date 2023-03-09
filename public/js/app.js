@@ -1,10 +1,3 @@
-console.log("client side js file loaded");
-// fetch('https://puzzle.mead.io/puzzle').then((res) => {
-//     res.json().then((data) => {
-//         console.log(data);
-//     })
-
-// })
 const fetchWeatherData = (searchString, messageOne, messageTwo) => {
     // let url = './weather?address=' + searchString;
     messageOne.textContent= "Searching For Weather";
@@ -16,19 +9,20 @@ const fetchWeatherData = (searchString, messageOne, messageTwo) => {
                 messageOne.textContent = error;
             }
             else {
-                messageOne.textContent = data.location;
+                console.log("data object is", data);
+                let messageOneText = "Temperature in " + data.location + " is " + data.temperature  + ' degrees farenheight. The humidity is ' + data.humidity +
+                " degrees farenheight.";
+                messageOne.textContent = messageOneText;
             }
         })
     })
 }
-
 window.onload = () => {
-    const weatherFrom = document.querySelector('form');
+    const weatherForm = document.querySelector('form');
     const search = document.querySelector("input");
     const messageOne = document.querySelector("#message-one");
     const messageTwo = document.querySelector("#message-two");
-   
-weatherFrom.addEventListener('submit', (e) => {
+weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value;
     fetchWeatherData(location, messageOne, messageTwo);
