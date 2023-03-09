@@ -36,6 +36,13 @@ header a:hover {
 }
 .potrait {
     width: 250px;
+    margin: auto;
+    display: flex;
+    border: 5px solid black;
+}
+.about-text {
+    font-size: 1.2em;
+    margin-top: 40px;
 }
 .main-content {
     flex-grow: 1;
